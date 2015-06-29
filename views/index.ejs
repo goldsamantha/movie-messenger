@@ -14,6 +14,7 @@
        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+       <track kind="captions" src="../captions/example.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
     </video>
 
@@ -28,11 +29,19 @@
         vid.width = window.innerWidth;
       }
       // console.log(vid);
-       function getTime() {
-         // body...
-         console.log(vid.currentTime);
-         return vid.currentTime;
-       }
+      function getTime() {
+        // body...
+        console.log(vid.currentTime);
+        console.log(cues.length);
+        return vid.currentTime;
+
+      }
+
+      var cues = vid.textTracks[0].cues;
+      console.log(cues.length);
+
+
+
       document.getElementById('example_video_1')
           .addEventListener('click',getTime, false);
 
