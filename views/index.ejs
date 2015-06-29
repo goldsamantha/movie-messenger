@@ -17,6 +17,8 @@
        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
     </video>
 
+
+
     <script type="text/javascript">
       var vid = document.getElementById('example_video_1');
       vid.height = window.innerHeight;
@@ -25,6 +27,28 @@
         vid.height = window.innerHeight;
         vid.width = window.innerWidth;
       }
+      // console.log(vid);
+       function getTime() {
+         // body...
+         console.log(vid.currentTime);
+         return vid.currentTime;
+       }
+      document.getElementById('example_video_1')
+          .addEventListener('click',getTime, false);
+
+
+
+
+
+
+
+      // var myPlayer = Video('example_video_1');
+      // var whereYouAt = myPlayer.currentTime();
+      // var x=0;
+      // while (x < 100){
+      //   console.log(vid.currentTime);
+      //   x++;
+      // }
     // document.createElement('video');document.createElement('audio');document.createElement('track');
     </script>
   </body>
