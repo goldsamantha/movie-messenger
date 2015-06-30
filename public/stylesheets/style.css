@@ -5,9 +5,10 @@ body {
   background-color: #111;
 }
 
-a {
+h1, a {
   color: #00B7FF;
 }
+
 
 /*.vjs-play-progress{
   background-color: #D02e2e;

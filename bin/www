@@ -37,7 +37,13 @@ server.on('listening', onListening);
 
 
 io.on('connection', function(socket) {
-  console.log("weep, i am here");
+  console.log("a user connected");
+  socket.on('create room', function(){
+    console.log('Room created!');
+    roomId = Math.random() * 10000 | 0;
+    socket.join(roomId);
+    socket.emit('room created', roomId);
+  });
 });
 
 
