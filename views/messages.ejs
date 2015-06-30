@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- // <script src="../javascripts/moviecont.js"></script>
+    // <script src="../javascripts/video_manipulation.js"></script> -->
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h1>Your idnumber is <%= id_num %></h1>
+
+  <script type="text/javascript">
+
+    // a lot of handlers that should probably be in their own file honestly.
+
+    console.log("joinID value: "+ id_num );
+    // socket.emit('join room', joinID);
+
+
+  </script>
+
+  </body>
+</html>

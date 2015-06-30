@@ -44,6 +44,18 @@ io.on('connection', function(socket) {
     socket.join(roomId);
     socket.emit('room created', roomId);
   });
+
+
+  socket.on('join room', function(jID){
+    joinID = jID;
+    var roomId = socket.adapter.rooms[joinID];
+    if (roomId != undefined){
+      socket.join(joinID);
+      console.log("Trying to enter with id: %d", joinID);
+      // io.sockets.in(joinID).emit('message', 'We rollin, they hatin!');
+    }
+  });
+
 });
 
 
