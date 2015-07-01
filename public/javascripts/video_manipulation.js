@@ -15,6 +15,7 @@ function initVideo(){
     var cue = this.activeCues[0];
     try {
       console.log(cue.text);
+      socket.emit('text track', cue.text);
     } catch(e){
       //do nothing;
       //TODO: seems like there is a better solution to this.

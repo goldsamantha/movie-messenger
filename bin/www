@@ -52,9 +52,24 @@ io.on('connection', function(socket) {
     if (roomId != undefined){
       socket.join(joinID);
       console.log("Trying to enter with id: %d", joinID);
-      // io.sockets.in(joinID).emit('message', 'We rollin, they hatin!');
+      io.sockets.in(joinID).emit('finished joining', joinID);
     }
   });
+
+  socket.on('track', function(track){
+
+    // Track obj {
+    //  jid: num,
+    //  msg: string
+    //}
+
+
+    io.sockets.in(track.jid).emit('show message', track.msg);
+
+
+  });
+
+
 
 });
 
