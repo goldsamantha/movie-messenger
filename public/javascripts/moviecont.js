@@ -26,7 +26,6 @@ function init(){
 
 
 
-  //TODO: Might be best to separate this function out
   function initVideo(rmID){
 
     var vid = document.getElementById('example_video_1');
@@ -42,15 +41,7 @@ function init(){
     vid.muted=true;
     vid.textTracks[0].oncuechange = function (){
       var cue = this.activeCues[0];
-      // socket.emit('waiting', "Waiting here");
       try {
-        console.log(cue.text);
-
-        console.log(rmID);
-        //io.sockets.in(joinID).emit('finished joining', joinID);
-        // io.sockets.in(rmID).emit('track', cueText);
-        console.log("passing after emitting track");
-
         var trackObj = {
           jid: rmID,
           msg: cue.text
@@ -58,8 +49,8 @@ function init(){
 
         socket.emit('track', trackObj);
       } catch(e){
-      //   //do nothing;
-      //   //TODO: seems like there is a better solution to this.
+        //do nothing;
+        //TODO: Resolve the error loading active cues
       }
 
     }
@@ -68,13 +59,9 @@ function init(){
 
   // For handling room joins
   var joinButton = document.getElementById('join_movie');
-
   joinButton.addEventListener('click', function(){
     var joinID = document.getElementById('join_roomid').value;
     window.location.href = "/room/" +joinID;
-
-    // console.log("joinID value: "+joinID);
-    // socket.emit('join room', joinID);
   });
 
 

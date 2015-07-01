@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+li{
+  padding: 10px 0 10px 45px;
+}
+
+li:nth-child(odd){
+  background-color: #ddd;
+}
+
+.container{
+  padding: 45px 45px 10px 45px;
+}

@@ -2,59 +2,39 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/messages.css' />
     <script src="/socket.io/socket.io.js"></script>
-    <!-- // <script src="../javascripts/moviecont.js"></script>
-    // <script src="../javascripts/video_manipulation.js"></script> -->
   </head>
   <body>
-    <h1><%= title %></h1>
-    <h1>Your idnumber is <%= id_num %></h1>
+    <div class="container">
+      <h1 id="msg">You are in room: </h1>
+    </div>
 
-    <p id="msg">Your text here</p>
+
+    <ul id ="msg-list">
+    </ul>
+
+
 
   <script type="text/javascript">
     var socket = io();
-    // a lot of handlers that should probably be in their own file honestly.
-
-    var id =<%= id_num %>;
+    var id = <%= id_num %>;
 
     console.log("joinID value: " +  id  );
 
+    var roomAlert = document.getElementById('msg');
+    roomAlert.innerHTML = roomAlert.innerHTML + id;
+
     socket.emit('join room', id);
-    // socket.emit('join room', joinID);
-
     socket.on('finished joining', function(text){
-
-      console.log("I am trying to log: " + text);
-      var obj = document.getElementById('msg');
-      obj.innerHTML = text;
-
-      socket.on('show message', function(text){
-
+    socket.on('show message', function(text){
         console.log("I am trying to log: " + text);
-        var obj = document.getElementById('msg');
-        obj.innerHTML = text;
+        var obj = document.getElementById('msg-list');
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(text));
+        obj.appendChild(li);
       });
-
-      // socket.on('waiting', function(displayTxt){
-      //   console.log("I am trying to log: " + displayTxt);
-      //   var obj = document.getElementById('msg');
-      //   obj.innerHTML = displayTxt;
-      // });
-
-    //   socket.on('move', function(id){
-    // io.sockets.in(gameId).emit('update board', id)
-    // });
-
     });
-
-
-    // socket.on('track', function(displayTxt){
-    //   console.log("I am trying to log: " + displayTxt);
-    //   var obj = document.getElementById('msg');
-    //   obj.innerHTML = displayTxt;
-    // });
 
   </script>
 

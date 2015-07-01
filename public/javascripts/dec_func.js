@@ -19,3 +19,14 @@ vid.addEventListener('play', function(){
   });
 });
 console.log(cues);
+
+
+// This will give time on a click:
+// used to debug
+function getTime() {
+  console.log(vid.currentTime);
+  return vid.currentTime;
+}
+document.getElementById('example_video_1')
+    .addEventListener('click',getTime, false);
+}
