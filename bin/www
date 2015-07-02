@@ -52,7 +52,6 @@ io.on('connection', function(socket) {
     if (roomId != undefined){
       socket.join(joinID);
       console.log("Trying to enter with id: %d", joinID);
-      io.sockets.in(joinID).emit('finished joining', joinID);
     }
   });
 

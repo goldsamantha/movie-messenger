@@ -6,13 +6,19 @@
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="head-elem">
       <h1 id="msg">You are in room: </h1>
     </div>
+    <div class="container">
 
 
     <ul id ="msg-list">
+      <!-- <li class="bubble">
+        <p>Message one</p>
+      </li> -->
     </ul>
+
+  </div>
 
 
 
@@ -26,15 +32,15 @@
     roomAlert.innerHTML = roomAlert.innerHTML + id;
 
     socket.emit('join room', id);
-    socket.on('finished joining', function(text){
     socket.on('show message', function(text){
         console.log("I am trying to log: " + text);
         var obj = document.getElementById('msg-list');
         var li = document.createElement("li");
-        li.appendChild(document.createTextNode(text));
+        li.className = "bubble";
+        li.innerHTML = "<p>" + text +"</p>";
+        // li.appendChild(document.createTextNode(text));
         obj.appendChild(li);
       });
-    });
 
   </script>
 
