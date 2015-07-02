@@ -47,6 +47,17 @@ top: 45px;
 }
 
 
+@media screen and (max-width: 700px){
+
+
+  .bubble{
+    width; 80%;
+  }
+
+
+}
+
+
 
 
 
