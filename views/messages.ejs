@@ -9,16 +9,12 @@
   </head>
   <body>
     <div class="head-elem">
-      <!-- <h1 id="msg">You are in room: </h1> -->
       <h1>Sherlock Holmes</h1>
     </div>
     <div class="container">
 
 
     <ul id ="msg-list">
-      <!-- <li class="bubble">
-        <p>Message one</p>
-      </li> -->
     </ul>
 
   </div>
@@ -31,8 +27,6 @@
 
     console.log("joinID value: " +  id  );
 
-    // var roomAlert = document.getElementById('msg');
-    // roomAlert.innerHTML = roomAlert.innerHTML + id;
 
     socket.emit('join room', id);
     socket.on('show message', function(text){
@@ -41,7 +35,6 @@
         var li = document.createElement("li");
         li.className = "bubble";
         li.innerHTML = "<p>" + text +"</p>";
-        // li.appendChild(document.createTextNode(text));
         obj.appendChild(li);
       });
 
