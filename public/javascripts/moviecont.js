@@ -38,7 +38,7 @@ function init(){
 
     var cues;
     vid.textTracks[0].mode = "showing";
-    vid.muted=true;
+    // vid.muted=true;
     vid.textTracks[0].oncuechange = function (){
       var cue = this.activeCues[0];
       try {

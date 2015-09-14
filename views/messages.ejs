@@ -33,8 +33,8 @@
         console.log("I am trying to log: " + text);
         var obj = document.getElementById('msg-list');
         var li = document.createElement("li");
-        li.className = "bubble";
-        li.innerHTML = "<p>" + text +"</p>";
+        // li.className = "bubble";
+        li.innerHTML = "<p class='bubble'>" + text +"</p>";
         obj.appendChild(li);
       });
 
