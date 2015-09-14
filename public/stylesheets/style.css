@@ -1,17 +1,40 @@
 body {
   /*padding: 50px;*/
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Raleway', sans-serif;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   background-color: #111;
+  width: 100%;
 }
 
 h1, a {
-  color: #00B7FF;
+  color: #c8e5f0;
+  font-weight: 400;
 }
-
+  
 p{
   color: #fff;
 
+}
+
+.padd-top{
+  padding-top: 200px;
+}
+
+.mid{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.main-buttons{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.inner-buttons{
+  margin: 0 auto;
+  display: block;
 }
 
 
