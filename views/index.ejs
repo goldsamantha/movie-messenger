@@ -2,26 +2,25 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/socket.io/socket.io.js"></script>
     <script src="../javascripts/moviecont.js"></script>
-    <!-- // <script src="../javascripts/video_manipulation.js"></script> -->
   </head>
   <body>
-    <!-- <h1><%= title %></h1> -->
-    <!-- <p>Welcome to <%= title %></p> -->
     <div id="init-area"></div>
 
 
 
     <script id="home-movie" type="text/template">
-      <!-- TODO: add button here that will link to "play movie" screen -->
-      <div>
-        <h1>Experience Init</h1>
-        <button id="start_button">Start Game</button>
+      <div class="main-buttons padd-top"></div>
+      <div class="main-buttons">
+        <h1 class='mid'>Begin the Film</h1>
+        <button id="start_button" class="mid">Start Game</button>
         <br />
-        <button id="join_movie">Join Room</button>
-        <input id="join_roomid" type="text"/>
+        <input id="join_roomid" class="mid" type="text"/>
+        <br>
+        <button id="join_movie" class="mid">Join Room</button>
       </div>
 
 
